@@ -1,0 +1,4 @@
+name,age,city,salary,high_earner
+James,30.0,Manchester,65000.0,True
+Chidi,26.875,Birmingham,52000.0,True
+Marcus,26.875,Sheffield,71000.0,True
