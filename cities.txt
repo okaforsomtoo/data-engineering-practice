@@ -4,4 +4,6 @@ New York
 Paris
 Tokyo
 Berlin
-tt
+Cairo
+Sydney
+Dublin
