@@ -96,4 +96,4 @@ FROM employees;
 SELECT employees.name, departments.manager, departments.budget 
 FROM employees 
 INNER JOIN departments ON employees.department = departments.department
-WHERE employees.salary > 40000; 
+WHERE employees.name = 'Tom';
