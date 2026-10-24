@@ -1,0 +1,128 @@
+[0m11:06:47.058309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de05a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f63e710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f63e990>]}
+
+
+============================== 11:06:47.066132 | ca41249d-3cda-44ed-8d54-8110c60bedc3 ==============================
+[0m11:06:47.066132 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:06:47.066911 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt init my_sbt_project', 'hints_enabled': 'True', 'no_print': 'None', 'log_format': 'default', 'write_json': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'log_path': 'logs', 'static_parser': 'True', 'warn_error': 'None', 'printer_width': '80', 'introspect': 'True', 'quiet': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'maximum_seed_size_mib': '1', 'profiles_dir': '/Users/Somtoo/.dbt', 'use_colors': 'True', 'debug': 'False', 'use_experimental_parser': 'False'}
+[0m11:06:47.101718 [info ] [MainThread]: Creating dbt configuration folder at /Users/Somtoo/.dbt
+[0m11:06:47.105377 [debug] [MainThread]: Starter project path: /Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/include/starter_project
+[0m11:06:47.120811 [info ] [MainThread]: Setting up your profile.
+[0m11:06:58.062299 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+cannot import name 'Credentials' from 'dbt.adapters.base' (/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/adapters/base/__init__.py)
+[0m11:06:58.073695 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/cli/main.py", line 504, in init
+    results = task.run()
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/task/init.py", line 363, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/task/init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/task/init.py", line 175, in create_profile_from_target
+    load_plugin(adapter)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/adapters/sqlite/__init__.py", line 1, in <module>
+    from dbt.adapters.sqlite.connections import SQLiteConnectionManager
+  File "/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/adapters/sqlite/connections.py", line 10, in <module>
+    from dbt.adapters.base import Credentials
+ImportError: cannot import name 'Credentials' from 'dbt.adapters.base' (/Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/adapters/base/__init__.py)
+
+[0m11:06:58.086606 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 11.167526, "process_in_blocks": "0", "process_kernel_time": 0.57616, "process_mem_max_rss": "119058432", "process_out_blocks": "0", "process_user_time": 2.167856}
+[0m11:06:58.089362 [debug] [MainThread]: Command `dbt init` failed at 11:06:58.088943 after 11.17 seconds
+[0m11:06:58.090242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f714e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f70bad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f73c8d0>]}
+[0m11:06:58.091339 [debug] [MainThread]: Flushing usage events
+[0m11:06:58.590773 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:55:19.387116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113081a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11491a710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11491a990>]}
+
+
+============================== 13:55:19.399303 | 773cb275-46ff-4a30-aefd-633dd6ac7fc9 ==============================
+[0m13:55:19.399303 [info ] [MainThread]: Running with dbt=1.12.6
+[0m13:55:19.400543 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'warn_error': 'None', 'log_format': 'default', 'write_json': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt init my_dbt_project', 'introspect': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'log_path': 'logs', 'hints_enabled': 'True', 'profiles_dir': '/Users/Somtoo/.dbt', 'cache_selected_only': 'False', 'no_print': 'None'}
+[0m13:55:19.442232 [debug] [MainThread]: Starter project path: /Users/Somtoo/Documents/data_engineering_practice/venv/lib/python3.14/site-packages/dbt/include/starter_project
+[0m13:55:19.456999 [info ] [MainThread]: Setting up your profile.
+[0m13:55:35.814917 [info ] [MainThread]: Profile my_dbt_project written to /Users/Somtoo/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m13:55:35.819164 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m13:55:35.820297 [info ] [MainThread]: dbt version: 1.12.6
+[0m13:55:35.820808 [info ] [MainThread]: python version: 3.14.3
+[0m13:55:35.821258 [info ] [MainThread]: python path: /Users/Somtoo/Documents/data_engineering_practice/venv/bin/python3.14
+[0m13:55:35.821676 [info ] [MainThread]: os info: macOS-26.7.1-x86_64-i386-64bit-Mach-O
+[0m13:55:35.925340 [info ] [MainThread]: Using profiles dir at /Users/Somtoo/.dbt
+[0m13:55:35.925962 [info ] [MainThread]: Using profiles.yml file at /Users/Somtoo/.dbt/profiles.yml
+[0m13:55:35.926407 [info ] [MainThread]: Using dbt_project.yml file at /Users/Somtoo/Documents/data_engineering_practice/my_dbt_project/dbt_project.yml
+[0m13:55:35.930141 [info ] [MainThread]: adapter type: duckdb
+[0m13:55:35.930741 [info ] [MainThread]: adapter version: 1.11.0
+[0m13:55:36.113664 [info ] [MainThread]: Configuration:
+[0m13:55:36.114297 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:55:36.114764 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:55:36.115188 [info ] [MainThread]: Required dependencies:
+[0m13:55:36.115811 [debug] [MainThread]: Executing "git --help"
+[0m13:55:36.144697 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:55:36.146370 [debug] [MainThread]: STDERR: "b''"
+[0m13:55:36.147014 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:55:36.147544 [info ] [MainThread]: Connection:
+[0m13:55:36.148392 [info ] [MainThread]:   database: dev
+[0m13:55:36.148918 [info ] [MainThread]:   schema: main
+[0m13:55:36.149346 [info ] [MainThread]:   path: dev.duckdb
+[0m13:55:36.149745 [info ] [MainThread]:   config_options: None
+[0m13:55:36.150140 [info ] [MainThread]:   extensions: None
+[0m13:55:36.150530 [info ] [MainThread]:   settings: {}
+[0m13:55:36.150912 [info ] [MainThread]:   external_root: .
+[0m13:55:36.151291 [info ] [MainThread]:   use_credential_provider: None
+[0m13:55:36.151698 [info ] [MainThread]:   attach: None
+[0m13:55:36.152078 [info ] [MainThread]:   filesystems: None
+[0m13:55:36.152456 [info ] [MainThread]:   remote: None
+[0m13:55:36.152835 [info ] [MainThread]:   plugins: None
+[0m13:55:36.153258 [info ] [MainThread]:   disable_transactions: False
+[0m13:55:36.154468 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m13:55:36.326233 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m13:55:36.475700 [debug] [MainThread]: Using duckdb connection "debug"
+[0m13:55:36.476328 [debug] [MainThread]: On debug: select 1 as id
+[0m13:55:36.476781 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:55:36.501222 [debug] [MainThread]: SQL status: OK in 0.024 seconds
+[0m13:55:36.502963 [debug] [MainThread]: On debug: Close
+[0m13:55:36.503682 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:55:36.504461 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:55:36.505237 [info ] [MainThread]: Your new dbt project "my_dbt_project" was created!
+Initialized new project in /Users/Somtoo/Documents/data_engineering_practice/my_dbt_project/my_dbt_project
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:55:36.510543 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 17.31155, "process_in_blocks": "0", "process_kernel_time": 0.604538, "process_mem_max_rss": "143876096", "process_out_blocks": "0", "process_user_time": 3.031714}
+[0m13:55:36.511459 [debug] [MainThread]: Command `dbt init` succeeded at 13:55:36.511281 after 17.31 seconds
+[0m13:55:36.512015 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:55:36.512590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114746060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114bebd10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114bae030>]}
+[0m13:55:36.513341 [debug] [MainThread]: Flushing usage events
+[0m13:55:37.060066 [debug] [MainThread]: An error was encountered while trying to flush usage events
